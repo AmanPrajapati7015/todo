@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.wrapper{
+    display: flex;
+    background-color: rgb(138, 138, 160);
+    height: 100vh;
+}
+
+.sidebar{
+    width: 250px;
+    padding: 40px 60px;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.todos-container{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 40px 80px;
+}
+
+.todos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.todo{
+    display: flex;
+    flex-grow: 1;
+    padding: 5px 10px;
+    gap: 10px;
+    background-color: aqua;
+}
+.todo-title{
+    flex-grow: 1;
+
+}
+
+
+button.add-todo{
+    position: fixed;
+    display: none;
+    bottom: 40px;
+    right: 40px;
+}
+
+button.add-todo.active{
+    display: inline-block;
+}
+
+
+/* add/edit task popup styles */
+.add-todo-wrapper.active{
+    display: flex;
+}
+
+.add-todo-wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(58, 58, 58, 0.369);
+    left: 0;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-form{
+    width: 850px;
+    background-color: rgb(154, 218, 189);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.todo-form .head{
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(154, 154, 154);
+}
+.todo-form .foot{
+    padding: 10px 30px;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.todo-form #form{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+.todo-form #form .field-col{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.todo-form #form .field-col .field{
+    display: flex;
+}
+
+.todo-form #form label{
+    display: inline-block;
+    width: 120px;
+}
+
+.todo-form #form input, textarea, select{
+    display: inline-block;
+    width: 250px;
+}
+
+
+
+
+button#add-task.active, button#edit-task.active{
+    display: inline-block;
+}
+button#add-task, button#edit-task{
+    display: none;
+}
