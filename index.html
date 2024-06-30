@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <nav></nav>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <h3 id="inbox" data-project="inbox">Inbox</h3>
+            <h3>Today</h3>
+            <h3>Projects</h3>
+            <div class="projects">
+                <div class="project">
+                    <p>New Project 1</p>
+                    <button>X</button>
+                </div>
+                <div class="project">
+                    <p>New Project 2</p>
+                    <button>X</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="project-form">
+                    <input class="new-project" type="text">
+                    <div class="btns">
+                        <button class="cancel">cancel</button>
+                        <button class="add-project">Add</button>
+                    </div>
+                </div>
+                <button class="display-add-project">Add</button>
+            </div>
+        </div>
+
+        <div class="todos-container">
+            <h2 class="todos-heading">Inbox</h2>
+            <div class="todos">
+                <div class="todo">
+                    <input type="checkbox" name="" id="">
+                    <p class="todo-title">This is todo 1</p>
+                    <button>edit</button>
+                    <p>Priority</p>
+                    <button>delete</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="add-todo-wrapper">
+        <div class="todo-form">
+            <div class="head">
+                <h3>New/Edit Task</h3>
+                <button class="close" >close</button>
+            </div>
+            <form id="form" action="">
+                <div class="field-col">
+                    <div class="field">
+                        <label for="title">Title</label>
+                        <input id="title" type="text">
+                    </div>
+                    <div class="field">
+                        <label for="desc">Description</label>
+                        <textarea id="desc" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="field-col">
+                    <div class="field">
+                        <label for="due">Due Date</label>
+                        <input id="due" type="date">
+                    </div>
+                    <div class="field">
+                        <label for="priority">Priority</label>
+                        <select id="priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                          </select>
+                    </div>
+                    <div class="field">
+                        <label for="project">Project</label>
+                        <select id="project">
+                            <option value="inbox">Inbox</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+            <div class="foot">
+                <button class="close">close</button>
+                <button id="add-task" class="active" >Add Task</button>
+                <button id="edit-task" >Edit Task</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="add-todo active" >Add</button>
+<script defer src="bundle.js"></script></body>
+</html>
