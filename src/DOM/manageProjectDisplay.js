@@ -1,7 +1,6 @@
 import { Todos } from "../todo";
 import { showTodos } from "./populateTodos";
-import { projectContainer } from "./projects_Dom";
-import { heading, formElemnents } from "./dom_elements";
+import { heading } from "./dom_elements";
 
 
 function showProjectTodos(project){
@@ -18,21 +17,6 @@ function showProjectTodos(project){
 function updateTitle(project){
     heading.textContent = project[0].toUpperCase() + project.slice(1);
 }
-
-
-const inbox = document.querySelector('#inbox');
-const projectBtns = [inbox, ...projectContainer.childNodes]
-
-
-projectBtns.forEach((projectBtn)=>{
-    projectBtn.addEventListener('click', (e)=>{
-        e.stopPropagation();
-        let project = projectBtn.getAttribute('data-project');
-        showProjectTodos(project);
-        formElemnents.project.value = project;
-    })
-})
-
 
 
 export {showProjectTodos} ;
