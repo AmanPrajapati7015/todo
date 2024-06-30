@@ -27,7 +27,7 @@ function addTask(){
 function editTask(e){
     let id = +e.target.getAttribute('data-id');
     const newTask = getTask();
-    Todos[id].edit(id, newTask.title, newTask.desc, newTask.due, newTask.priority, newTask.project);
+    Todo.edit(id, newTask.title, newTask.desc, newTask.due, newTask.priority, newTask.project);
     showProjectTodos(newTask.project);
     updateState();
     toogleView();

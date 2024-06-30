@@ -1,4 +1,3 @@
-
 let Todos = {};
 
 
@@ -14,14 +13,13 @@ class Todo{
         Todos[id] = this;
     }
 
-    edit(id, title, desc, dueDate, priority, project){
-        this.title = title;
-        this.desc = desc;
-        this.project = project;
-        this.priority = priority;
-        this.due = dueDate;
-        Todos[id] = this;
-        console.log(this);
+    static edit(id, title, desc, dueDate, priority, project){
+        Todos[id].desc = desc;
+        Todos[id].desc = desc;
+        Todos[id].title = title;
+        Todos[id].project = project;
+        Todos[id].priority = priority;
+        Todos[id].due = dueDate;
     }
 
     static delete(id){
@@ -36,21 +34,13 @@ const todo2 = new Todo("drink more water","this is my desc 2", new Date(), 'medi
 const todo3 = new Todo("drink water","this is my desc5", new Date(),'high', 'inbox', false);
 const todo6 = new Todo("Go to Gym at 6","this is my desc5", new Date(),'high', 'gym', false);
 
-
 if(localStorage.getItem('todos')){
-    Todos = {}; 
+    Todos = {};
     const todos = JSON.parse(localStorage.getItem('todos'));
     for(let id in todos){
-        let title = todos[id].title;
-        let desc = todos[id].desc;
-        let due = todos[id].due;
-        let priority = todos[id].priority;
-        let project = todos[id].project;
-        let isDone = todos[id].isDone;
-        new Todo(title, desc, new Date(due), priority, project, isDone);
+        Todos[id] = todos[id];
     }
-    console.table(todos);
-    // console.log(JSON.parse(todos));
+    console.log(todos);
 }
 
 
