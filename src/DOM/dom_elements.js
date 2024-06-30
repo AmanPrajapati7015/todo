@@ -18,8 +18,6 @@ formElemnents.project = form.querySelector('#project');
 
 const todoContainer = document.querySelector('div.todos');
 
+const heading = document.querySelector('h2.todos-heading');
 
-
-
-
-export {addBtn,editTaskBtn, addTaskBtn, form_display, form,closeBtns, todoContainer, formElemnents};
+export {addBtn,editTaskBtn, addTaskBtn, form_display, form,closeBtns, todoContainer, formElemnents, heading};

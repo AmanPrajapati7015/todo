@@ -18,6 +18,7 @@ cancleBtn.addEventListener('click', toggleView);
 showAddProjectBtn.addEventListener('click', toggleView);
 
 function delProject(e){
+    e.stopPropagation();
     let i = +e.target.getAttribute('data-i');
     Projects.splice(i, 1);
     showProjecs(Projects)
@@ -32,6 +33,7 @@ function makeProject(project, i){
         delBtn.addEventListener('click', delProject);
         const projectDiv = document.createElement('div');
         projectDiv.classList.add('project');
+        projectDiv.setAttribute('data-project', project.toLowerCase())
         projectDiv.appendChild(title);
         projectDiv.appendChild(delBtn);
 
@@ -71,4 +73,4 @@ addProjectBtn.addEventListener('click', ()=>{
 })
 
 
-export default null;
+export {projectContainer};

@@ -1,9 +1,8 @@
 import './styles.css'
 import {} from './DOM/manageFormDisplay'
-import './DOM/projects_Dom'
-import { Todos } from './todo'
-import { showTodos } from './DOM/populateTodos'
+import  {} from './DOM/projects_Dom'
+import { showProjectTodos } from './DOM/manageProjectDisplay'
 
 
 
-showTodos(Todos);
+showProjectTodos('inbox');
