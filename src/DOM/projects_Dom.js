@@ -21,6 +21,7 @@ function delProject(e){
     e.stopPropagation();
     let i = +e.target.getAttribute('data-i');
     Projects.splice(i, 1);
+    localStorage.setItem('projects', JSON.stringify(Projects));
     showProjecs(Projects)
 }
 
@@ -66,6 +67,7 @@ showProjecs(Projects);
 addProjectBtn.addEventListener('click', ()=>{
     let newProject = projectInput.value;
     Projects.push(newProject);
+    localStorage.setItem('projects', JSON.stringify(Projects));
     showProjecs(Projects);
     projectInput.value = '';
     toggleView();

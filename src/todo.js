@@ -34,6 +34,7 @@ const todo2 = new Todo("drink more water","this is my desc 2", new Date(), 'medi
 const todo3 = new Todo("drink water","this is my desc5", new Date(),'high', 'inbox', false);
 const todo6 = new Todo("Go to Gym at 6","this is my desc5", new Date(),'high', 'gym', false);
 
+
 if(localStorage.getItem('todos')){
     Todos = {};
     const todos = JSON.parse(localStorage.getItem('todos'));
@@ -46,6 +47,5 @@ if(localStorage.getItem('todos')){
 
 console.table(Todos)
 
-// console.log(Todos);
 export {Todo, Todos};
 
