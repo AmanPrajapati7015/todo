@@ -11,7 +11,7 @@
 }
 
 .sidebar{
-    width: 250px;
+    width: 350px;
     padding: 40px 60px;
     box-sizing: border-box;
     background-color: antiquewhite;
@@ -132,4 +132,23 @@ button#add-task.active, button#edit-task.active{
 }
 button#add-task, button#edit-task{
     display: none;
+}
+
+
+
+
+.projects{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.project{
+    display: flex;
+    justify-content: space-between;
+}
+div.project-form{
+    display: none;
+}
+div.project-form.active{
+    display: inline-block;
 }
