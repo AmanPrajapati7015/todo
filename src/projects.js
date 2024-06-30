@@ -1,4 +1,4 @@
-let Projects = ['Project1', 'Gym'];
+let Projects = ['Todo', 'Gym'];
 
 if(localStorage.getItem('projects')){
     Projects = JSON.parse(localStorage.getItem('projects'));

@@ -3,6 +3,14 @@ import {todoContainer} from './dom_elements';
 import { delTodo } from './curd';
 import { showEditor } from './manageFormDisplay';
 
+import red from '../icons/flag-red.svg';
+import yellow from '../icons/flag-yellow.svg';
+import green from '../icons/flag-green.svg'
+import editIcon from '../icons/edit.svg';
+import delIcon from '../icons/delete.svg';
+
+
+const colorMap = {'low':green, 'medium':yellow, 'high':red};
 
 
 function makeTodo(id, todo){
@@ -13,28 +21,32 @@ function makeTodo(id, todo){
     
     const status = document.createElement('input');
     status.setAttribute('type', 'checkbox');
+
     const title = document.createElement('p');
-    title.classList.add('todo-title')
-    const edit = document.createElement('button');
-    const priority = document.createElement('p');
-    const del = document.createElement('button');
+    title.classList.add('todo-title');
+
+    const edit = new Image();
+    const img = new Image();
+    const del = new Image();
+
+    edit.classList.add('icon');
+    img.classList.add('icon');
+    del.classList.add('icon');
+
+    edit.src = editIcon;
+    img.src = colorMap[todo.priority];
+    del.src = delIcon;
     
     status.checked = false;
     title.textContent = todo.title;
-    edit.textContent = 'edit';
+    
     edit.addEventListener('click', showEditor);
-
-
-    priority.textContent = todo.priority;
-    del.textContent = "delete"
     del.addEventListener('click', delTodo);
-
-    // del add event listener
 
     todoDiv.appendChild(status);
     todoDiv.appendChild(title);
     todoDiv.appendChild(edit);
-    todoDiv.appendChild(priority);
+    todoDiv.appendChild(img);
     todoDiv.appendChild(del);
 
     return todoDiv;
