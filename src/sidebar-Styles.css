@@ -16,6 +16,11 @@
     gap: 5px;
 }
 
+.projects .project{
+    display: flex;
+    justify-content: space-between;
+}
+
 .sidebar h3, .sidebar .projects .project{
     font-weight: 400;
     padding: 5px;
@@ -44,10 +49,13 @@
     gap: 10px;
 }
 
-.add-project-wrap .project-form.active{
+div.project-form{
+    display: none;
+}
+
+div.project-form.active{
     display: flex;
     flex-direction: column;
-    width: 200px ;
     gap: 10px;
 }
 
@@ -65,6 +73,8 @@
     background: none;
     font-size: 0.9rem;
 }
+.project-form input{
+    border: 1px solid grey;}
 .btns button.cancel{
     color: red;
     border: 1px solid red;
@@ -84,4 +94,11 @@
 
 .display-add-project:hover{
     color: red;
+}
+
+
+.sidebar h3{
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }

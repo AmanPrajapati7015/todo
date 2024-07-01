@@ -21,18 +21,18 @@ function makeTodo(id, todo){
     
     const status = document.createElement('input');
     status.setAttribute('type', 'checkbox');
-
+    
     const title = document.createElement('p');
     title.classList.add('todo-title');
-
+    
     const edit = new Image();
     const img = new Image();
     const del = new Image();
-
+    
     edit.classList.add('icon');
     img.classList.add('icon');
     del.classList.add('icon');
-
+    
     edit.src = editIcon;
     img.src = colorMap[todo.priority];
     del.src = delIcon;
@@ -40,6 +40,10 @@ function makeTodo(id, todo){
     status.checked = false;
     title.textContent = todo.title;
     
+    status.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        setTimeout(()=>delTodo(e), 500);
+    })
     edit.addEventListener('click', showEditor);
     del.addEventListener('click', delTodo);
 

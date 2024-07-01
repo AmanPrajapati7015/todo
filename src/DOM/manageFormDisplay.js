@@ -2,6 +2,7 @@ import { addBtn,addTaskBtn, editTaskBtn,formElemnents, form_display,form, closeB
 import { format } from 'date-fns';
 import {Todos} from '../todo';
 import { addTask, editTask } from './curd';
+import { resetTask } from './getTask';
 
 //closing and opening add Todo window
 function toogleView(){
@@ -9,7 +10,9 @@ function toogleView(){
     addBtn.classList.toggle('active');
 }
 
+
 function showAddBtn(){
+    resetTask();
     addTaskBtn.classList.add('active');
     editTaskBtn.classList.remove('active');
 }
