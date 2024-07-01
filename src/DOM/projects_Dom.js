@@ -1,12 +1,13 @@
 import { Projects } from "../projects";
-import { formElemnents } from "./dom_elements";
 import { showProjectTodos } from "./manageProjectDisplay";
-
+import { formElemnents } from "./dom_elements";
+import delIcon from '../icons/delete.svg'
+import '../sidebar-Styles.css'
 
 
 const showAddProjectBtn = document.querySelector('.display-add-project');
 const cancleBtn = showAddProjectBtn.previousElementSibling.querySelector('.cancel');
-const addProjectBtn = cancleBtn.nextElementSibling;
+const addProjectBtn = cancleBtn.previousElementSibling;
 const projectInput = showAddProjectBtn.previousElementSibling.firstElementChild;
 const projectContainer = showAddProjectBtn.parentElement.previousElementSibling;
 
@@ -15,7 +16,7 @@ const optionsContainer = document.querySelector('select#project');
 
 function toggleView(){
     showAddProjectBtn.previousElementSibling.classList.toggle('active');
-    showAddProjectBtn.textContent = (showAddProjectBtn.textContent =='Add')? 'Close' :'Add'
+    showAddProjectBtn.textContent = (showAddProjectBtn.textContent =='+ New Project')? 'Close' :'+ New Project';
 }
 
 cancleBtn.addEventListener('click', toggleView);
@@ -34,8 +35,8 @@ function delProject(e){
 function makeProject(project, i){
         const title = document.createElement('p');
         title.textContent = project;
-        const delBtn = document.createElement('button');
-        delBtn.textContent = 'X';
+        const delBtn = new Image();
+        delBtn.src = delIcon;
         delBtn.setAttribute('data-i', i);
         delBtn.addEventListener('click', delProject);
         const projectDiv = document.createElement('div');
@@ -58,6 +59,16 @@ function addProjectOptions(projects){
     })
 }
 
+
+
+function removeActive(){
+    const ProjectDivs = [inboxDiv, ...projectContainer.childNodes];
+    ProjectDivs.forEach((div)=>{
+        div.classList.remove('active');
+    })
+}
+
+
 //puts all projects inside sidebaar 
 //also adds eventListerner to open that project
 function showProjecs(Projects){
@@ -67,6 +78,8 @@ function showProjecs(Projects){
         projectDiv.addEventListener('click', ()=>{
             let p = Projects[i];
             showProjectTodos(p);
+            removeActive();
+            projectDiv.classList.add('active');
             formElemnents.project.value = p.toLowerCase();
         });
         projectContainer.appendChild(projectDiv);
@@ -90,12 +103,13 @@ addProjectBtn.addEventListener('click', ()=>{
 
 
 
-
-document.querySelector('#inbox').addEventListener('click', ()=>{
+const inboxDiv = document.querySelector('#inbox');
+inboxDiv.addEventListener('click', ()=>{
     showProjectTodos('inbox');
+    removeActive();
+    inboxDiv.classList.add('active')
     formElemnents.project.value = 'inbox';
 })
-
 
 
 

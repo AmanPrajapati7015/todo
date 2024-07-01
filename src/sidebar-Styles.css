@@ -1,0 +1,87 @@
+.sidebar{
+    width: 300px;
+    padding: 40px 20px 40px 40px;
+    box-sizing: border-box;
+    background-color: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar .projects{
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sidebar h3, .sidebar .projects .project{
+    font-weight: 400;
+    padding: 5px;
+}
+.sidebar h3:hover, .sidebar .projects .project:hover{
+    background-color: #FFFFFF;
+}
+
+.sidebar h3.active , .sidebar .projects .project.active{
+    font-weight: 700;
+}
+
+.project>img{
+    display: none;
+    width: 18px;
+}
+.project:hover>img{
+    display: inline-block;
+}
+
+
+.add-project-wrap{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 10px;
+}
+
+.add-project-wrap .project-form.active{
+    display: flex;
+    flex-direction: column;
+    width: 200px ;
+    gap: 10px;
+}
+
+
+
+.project-form .btns{
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.btns button,  .project-form input{
+    padding: 3px 10px;
+    flex-grow: 1;
+    background: none;
+    font-size: 0.9rem;
+}
+.btns button.cancel{
+    color: red;
+    border: 1px solid red;
+}
+.btns button.add-project{
+    color:green ;
+    border: 1px solid green;
+}
+
+.display-add-project{
+    border: none;
+    background: none;
+    font-size: 0.9rem;
+    padding: 0;
+    align-self: flex-start;
+}
+
+.display-add-project:hover{
+    color: red;
+}
