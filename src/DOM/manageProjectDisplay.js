@@ -6,7 +6,10 @@ import { format } from "date-fns";
 
 
 function showProjectTodos(project){
+
     updateTitle(project);
+    if(project == 'today') return showTodayTodos();
+
     const filtered = {};
     for(let id in Todos){
         if(Todos[id].project == project.toLowerCase()){
@@ -21,7 +24,6 @@ function updateTitle(project){
 }
 
 function showTodayTodos(){
-    updateTitle('Today');
     const filtered = {}
     for(let id in Todos){
         let dueStr = Todos[id].due.slice(0, 10);
@@ -33,4 +35,4 @@ function showTodayTodos(){
     showTodos(filtered);
 }
 
-export {showProjectTodos, showTodayTodos} ;
+export {showProjectTodos} ;

@@ -1,5 +1,5 @@
 import { Projects } from "../projects";
-import { showProjectTodos, showTodayTodos } from "./manageProjectDisplay";
+import { showProjectTodos } from "./manageProjectDisplay";
 import { formElemnents } from "./dom_elements";
 import delIcon from '../icons/delete.svg'
 import '../sidebar-Styles.css'
@@ -113,7 +113,7 @@ inboxDiv.addEventListener('click', ()=>{
 
 const todayDiv = inboxDiv.nextElementSibling;
 todayDiv.addEventListener('click', ()=>{
-    showTodayTodos();
+    showProjectTodos('today');
     removeActive();
     todayDiv.classList.add('active')
 })

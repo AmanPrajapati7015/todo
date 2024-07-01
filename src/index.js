@@ -11,7 +11,6 @@ showProjectTodos('inbox');
 
 //Todos
 // 1. Add details on clicking on a todo
-// 3. complete Today page to show only todo with due date == today
 
 
 //Bugs
