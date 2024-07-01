@@ -2,7 +2,7 @@ const addBtn = document.querySelector('.add-todo');
 
 const form_display = document.querySelector('.add-todo-wrapper');
 const form = form_display.querySelector('.todo-form')
-const closeBtns = form_display.querySelectorAll('button.close')
+const closeBtns = form_display.querySelectorAll('img.close')
 
 const addTaskBtn = form.querySelector('#add-task');
 const editTaskBtn = form.querySelector('#edit-task');

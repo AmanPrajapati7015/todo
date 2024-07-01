@@ -73,52 +73,83 @@ button.add-todo.active{
 }
 
 .todo-form{
-    width: 850px;
-    background-color: rgb(154, 218, 189);
+    width: 800px;
+    background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    border-radius: 8px;
 }
+
 .todo-form .head{
-    padding: 10px 30px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgb(154, 154, 154);
+
 }
-.todo-form .foot{
-    padding: 10px 30px;
-    display: flex;
-    justify-content: end;
-    gap: 20px;
+.todo-form .head h3{
+    font-weight: 400;
 }
+
 
 .todo-form #form{
     display: flex;
-    justify-content: space-between;
-    padding: 10px 30px;
+    gap: 20px;
+    padding: 20px;
+    color : #21252A;
 }
 
 .todo-form #form .field-col{
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    align-items: center;
+    gap: 20px;
 }
 
 .todo-form #form .field-col .field{
     display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.todo-form #form label{
-    display: inline-block;
-    width: 120px;
+.todo-form #form label::after{
+    content: " :";
+    font-size: 1rem;
 }
 
 .todo-form #form input, textarea, select{
-    display: inline-block;
-    width: 250px;
+    font-size: 1rem;
+    padding: 8px 12px;
+    color: #495057;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 4px;
 }
 
+.todo-form .foot{
+    padding: 0 20px 20px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.foot button{
+    padding: 10px;
+    font-size: 1rem;
+    background: none;
+    border: 1px solid #6C757D;
+    color: #6C757D;
+    border-radius: 4px;
+}
+
+ .foot button.close:hover{
+    color: white;
+    background-color:#6C757D ;
+}
+.foot button#add-task, .foot button#edit-task{
+    background-color: #DB4C3F;
+    border-color: #DB4C3F;
+    color: white;
+}
 
 
 
